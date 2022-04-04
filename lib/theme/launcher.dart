@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/home/home_page.dart';
 
 import 'theme_provider.dart';
 
@@ -16,7 +17,7 @@ class Launcher extends StatelessWidget {
       theme: OrderTheme.lightTheme,
       darkTheme: OrderTheme.darkTheme,
       themeMode:ThemeMode.system ,
-      home:  const HomePage (),
+      home:  const HomePage(),
     );
   }
 }
