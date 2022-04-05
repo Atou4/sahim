@@ -20,22 +20,22 @@ class _OnboardState extends State<Onboard> {
 
   final List<Widget> _pages = [
     const SliderPage(
-        color: SahimColors.grey,
-        title: "Variety",
+        color: SahimColors.white,
+        title: "فرص تبرع متنوعة",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+            "تغطي كافة مجالات الخير وتصل الى من يستحقها من الفئات الاشد احتياجا",
         image: "assets/illustrations/charity.svg"),
     const SliderPage(
-        color: SahimColors.grey,
-        title: "Speed",
+        color: SahimColors.white,
+        title: "طرق دفع امنة و سهلة",
         description:
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+            "عبر خيارات متعددة تسهل عملية التبرع",
         image: "assets/illustrations/payment.svg"),
     const SliderPage(
-        color: SahimColors.grey,
-        title: "Commitment",
+        color: SahimColors.white,
+        title: "متابعة الاحصائيات الخاصة",
         description:
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+            "عبر الاطلاع على سجلات تبرعاتك السابقة من خلال حسابك الشخصي",
         image: "assets/illustrations/stats.svg"),
   ];
 
@@ -48,6 +48,7 @@ class _OnboardState extends State<Onboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: SahimColors.white,
       //wrappit with a container
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,63 +84,57 @@ class _OnboardState extends State<Onboard> {
                               borderRadius: BorderRadius.circular(5),
                               color: (index == _currentPage)
                                   ? SahimColors.green
-                                  : SahimColors.grey.withOpacity(0.5)));
+                                  : SahimColors.grey));
                     })),
                 (_currentPage == (_pages.length - 1))
                     //the size of the button is 200
-                    ? Expanded(
+                    ?Expanded(
                         child: SizedBox(
                           width: double.infinity,
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const SizedBox(
-                                height: 10,
-                              ),
                               MainButton(
-                                text: "التالي",
-                                textcolor: SahimColors.white,
-                                buttoncolor: SahimColors.blue,
-                                onpressed: () {
-                                  if (_currentPage == (_pages.length - 1)) {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (_) => const BottomNav()));
-                                  } 
-                                },
-                                bordercolor:SahimColors.blue,
+                              text: "التالي",
+                              textcolor: SahimColors.white,
+                              buttoncolor: SahimColors.green,
+                              onpressed: () {
+                                if (_currentPage == (_pages.length - 1)) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => const BottomNav()));
+                                } 
+                              },
+                              bordercolor:SahimColors.green,
                               ),
                             ],
                           ),
                         ),
                       )
-                    : Expanded(
+                       
+                    :Expanded(
                         child: SizedBox(
                           width: double.infinity,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 20.0),
-                                child: MainButton(
-                                text: "التالي",
-                                textcolor: SahimColors.white,
-                                buttoncolor: SahimColors.blue,
-                                onpressed: () {
-                                  _controller.nextPage(
-                                        duration:
-                                            const Duration(milliseconds: 200),
-                                        curve: Curves.easeInOutQuint);
-                                },
-                                bordercolor:SahimColors.blue,
-                              ),
+                              MainButton(
+                              text: "التالي",
+                              textcolor: SahimColors.white,
+                              buttoncolor: SahimColors.green,
+                              onpressed: () {
+                                _controller.nextPage(
+                                      duration:
+                                          const Duration(milliseconds: 200),
+                                      curve: Curves.easeInOutQuint);
+                              },
+                              bordercolor:SahimColors.green,
                               ),
                             ],
                           ),
                         ),
-                      ),
+                      ) ,                  
                 const SizedBox(
                   height: 10,
                 )

@@ -14,22 +14,22 @@ class SahimTheme {
     
     colorScheme: const ColorScheme.dark(),
     textTheme: const TextTheme(
-      headline4: TextStyle(fontSize: 22, fontWeight: FontWeight.w600,color: SahimColors.dark),
-      headline5: TextStyle(fontSize: 22, fontWeight: FontWeight.w400,color: SahimColors.dark),
+      headline4: TextStyle(fontSize: 26, fontWeight: FontWeight.w600,color: SahimColors.blue),
+      headline5: TextStyle(fontSize: 26, fontWeight: FontWeight.w400,color: SahimColors.blue),
       headline6: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w500, letterSpacing: 0.15,color: SahimColors.dark),
+          fontSize: 18, fontWeight: FontWeight.w500, letterSpacing: 0.15,color: SahimColors.blue),
       subtitle1: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.15,color: SahimColors.dark),
+          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.15,color: SahimColors.blue),
       subtitle2: TextStyle(
           fontSize: 13, fontWeight: FontWeight.w500, letterSpacing: 0.1,color: SahimColors.green),
       bodyText1: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5,color: SahimColors.dark),
+          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5,color: SahimColors.blue),
       bodyText2: TextStyle(
-          fontSize: 13, fontWeight: FontWeight.w400, letterSpacing: 0.25,color: SahimColors.orange),
+          fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.25,color: SahimColors.grey),
       button: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.dark),
+          fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.blue),
       caption: TextStyle(
-          fontSize: 11, fontWeight: FontWeight.w400, letterSpacing: 0.4,color: SahimColors.dark),
+          fontSize: 11, fontWeight: FontWeight.w400, letterSpacing: 0.4,color: SahimColors.blue),
       overline: TextStyle(
           fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 1.5,color: SahimColors.grey),
     ),

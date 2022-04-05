@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sahim/theme/colors.dart';
 
 class SliderPage extends StatelessWidget {
   final String title;
@@ -34,7 +35,7 @@ class SliderPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 80),
             child: Text(
               description,
-              style:Theme.of(context).textTheme.bodyText1,
+              style:Theme.of(context).textTheme.bodyText2!.copyWith(color: Colors.grey),
               textAlign: TextAlign.center,
             ),
           ),
