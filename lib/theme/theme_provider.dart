@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahim/theme/colors.dart';
 
-class OrderTheme {
+class SahimTheme {
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: SahimColors.darkgrey,
     colorScheme: const ColorScheme.light(),
@@ -44,9 +44,9 @@ class OrderTheme {
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       elevation: 12.0,
-      selectedItemColor: SahimColors.orange,
+      selectedItemColor: SahimColors.green,
       unselectedItemColor: SahimColors.darkgrey,
-      selectedLabelStyle: TextStyle(color: SahimColors.orange,height: 1),
+      selectedLabelStyle: TextStyle(color: SahimColors.green,height: 1),
       unselectedLabelStyle:  TextStyle(height: 0.0, fontSize: 0.0),
     ),
 

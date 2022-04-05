@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/bottom_nav.dart';
 import 'package:sahim/screens/home/home_page.dart';
 
 import 'theme_provider.dart';
@@ -14,10 +15,12 @@ class Launcher extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: OrderTheme.lightTheme,
-      darkTheme: OrderTheme.darkTheme,
+      theme: SahimTheme.lightTheme,
+      darkTheme: SahimTheme.darkTheme,
       themeMode:ThemeMode.system ,
-      home:  const HomePage(),
+      home: const Directionality(
+        textDirection: TextDirection.rtl,
+        child:  BottomNav()),
     );
   }
 }
