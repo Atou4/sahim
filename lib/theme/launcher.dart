@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/bottom_nav.dart';
 import 'package:sahim/screens/home/home_page.dart';
+import 'package:sahim/screens/onboarding_pages.dart';
 
 import 'theme_provider.dart';
 
@@ -20,7 +21,7 @@ class Launcher extends StatelessWidget {
       themeMode:ThemeMode.system ,
       home: const Directionality(
         textDirection: TextDirection.rtl,
-        child:  BottomNav()),
+        child:  Onboard()),
     );
   }
 }
