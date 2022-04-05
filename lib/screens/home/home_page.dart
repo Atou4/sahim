@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import '../../widgets/project_card_widget.dart';
 
 
 
@@ -41,10 +42,7 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: size.height * 0.03,
                   ),
-                
-                  SizedBox(
-                    height: size.height * 0.01,
-                  ),
+
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -60,6 +58,20 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    height: 350,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        ProjectCardWidget(imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg', projectName: 'إفطار الصائم', restToDonatePercentage: 70,),
+                        ProjectCardWidget(imgUrl: 'assets/img/old_man.jpeg',projectName:  'إعانة كبار السن', restToDonatePercentage:51,),
+                        ProjectCardWidget(imgUrl: 'assets/img/homeless-people.jpg', projectName: 'مشروع إواء المحتاجين', restToDonatePercentage: 34,),
+                        ProjectCardWidget(imgUrl: 'assets/img/down-syndrome-painting.jpg', projectName: 'عناية أطفال متلازمة داون', restToDonatePercentage: 14,),
+                      ],
+                    ),
+                  ),
+
                   SizedBox(
                   height: size.height * 0.03,),
                  const Center(child:  Image(height: 100,width:300, image: AssetImage('assets/pics/aya.png'),)),

@@ -23,11 +23,11 @@ class _BottomNav extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
      final List<Widget> _pages = [
-    const ProfilePage(),
-   // Pagemap(ide:widget.ide ,clientnumber: widget.clientnumber,),
-    const OrgsPage(),
-    const ProgramPage(),
     const HomePage(),
+   // Pagemap(ide:widget.ide ,clientnumber: widget.clientnumber,),
+    const ProgramPage(),
+    const OrgsPage(),
+    const ProfilePage(),
     
   ];
     return Scaffold(
@@ -41,21 +41,21 @@ class _BottomNav extends State<BottomNav> {
         },
         items: const[
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "حسابي",
+            icon: Icon(Icons.home),
+            label: "الرئيسية",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.nat),
+            label: "الجمعيات",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
             label: "المجالات",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.nat),
-            label: "الجمعيات",
+            icon: Icon(Icons.person),
+            label: "حسابي",
           ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "الرئيسية",
-            ),
         ],
       ),
     );

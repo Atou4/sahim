@@ -27,7 +27,7 @@ class SahimTheme {
       bodyText2: TextStyle(
           fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.25,color: SahimColors.grey1),
       button: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.green),
+          fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.white),
       caption: TextStyle(
           fontSize: 11, fontWeight: FontWeight.w400, letterSpacing: 0.4,color: SahimColors.green),
       overline: TextStyle(
@@ -39,6 +39,7 @@ class SahimTheme {
       shadowColor: SahimColors.grey,
       centerTitle: true,
     ),
+    buttonTheme: ButtonThemeData(buttonColor: SahimColors.green),
     bottomNavigationBarTheme:const  BottomNavigationBarThemeData(
       selectedIconTheme: IconThemeData(size: 30),
       backgroundColor: Colors.white,
