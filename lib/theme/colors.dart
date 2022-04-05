@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SahimColors {
-  static const grey = Color(0xffE5E5E5);
+  static const grey = Color(0xffF1F6F9);
+  static const grey1 = Color(0xff91969D);
   static const white = Color(0xffFfFfFf);
   static const green = Color(0xff54CA9F);
   static const darkgrey = Color(0xFF121212);

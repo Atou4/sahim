@@ -84,7 +84,7 @@ class _OnboardState extends State<Onboard> {
                               borderRadius: BorderRadius.circular(5),
                               color: (index == _currentPage)
                                   ? SahimColors.green
-                                  : SahimColors.grey));
+                                  : SahimColors.grey1));
                     })),
                 (_currentPage == (_pages.length - 1))
                     //the size of the button is 200

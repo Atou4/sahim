@@ -13,25 +13,25 @@ class SahimTheme {
     fontFamily: "arabic",
     
     colorScheme: const ColorScheme.dark(),
-    textTheme: const TextTheme(
-      headline4: TextStyle(fontSize: 26, fontWeight: FontWeight.w600,color: SahimColors.blue),
-      headline5: TextStyle(fontSize: 26, fontWeight: FontWeight.w400,color: SahimColors.blue),
+    textTheme:  const TextTheme(
+      headline4: TextStyle(fontSize: 26, fontWeight: FontWeight.w600,color: SahimColors.green),
+      headline5: TextStyle(fontSize: 26, fontWeight: FontWeight.w400,color: SahimColors.green),
       headline6: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w500, letterSpacing: 0.15,color: SahimColors.blue),
+          fontSize: 22, fontWeight: FontWeight.w500, letterSpacing: 0.15,color: SahimColors.grey1),
       subtitle1: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.15,color: SahimColors.blue),
+          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.15,color: SahimColors.green),
       subtitle2: TextStyle(
           fontSize: 13, fontWeight: FontWeight.w500, letterSpacing: 0.1,color: SahimColors.green),
       bodyText1: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5,color: SahimColors.blue),
+          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5,color: SahimColors.green),
       bodyText2: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.25,color: SahimColors.grey),
+          fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.25,color: SahimColors.grey1),
       button: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.blue),
+          fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.green),
       caption: TextStyle(
-          fontSize: 11, fontWeight: FontWeight.w400, letterSpacing: 0.4,color: SahimColors.blue),
+          fontSize: 11, fontWeight: FontWeight.w400, letterSpacing: 0.4,color: SahimColors.green),
       overline: TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 1.5,color: SahimColors.grey),
+          fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 1.5,color: SahimColors.orange),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: SahimColors.grey,
@@ -45,7 +45,7 @@ class SahimTheme {
       type: BottomNavigationBarType.fixed,
       elevation: 12.0,
       selectedItemColor: SahimColors.green,
-      unselectedItemColor: SahimColors.darkgrey,
+      unselectedItemColor: SahimColors.grey1,
       selectedLabelStyle: TextStyle(color: SahimColors.green,height: 1),
       unselectedLabelStyle:  TextStyle(height: 0.0, fontSize: 0.0),
     ),
