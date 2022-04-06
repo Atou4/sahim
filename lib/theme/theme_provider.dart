@@ -32,7 +32,7 @@ class SahimTheme {
       caption: TextStyle(
           fontSize: 18, fontWeight: FontWeight.w500, letterSpacing: 0.4,color: SahimColors.blue),
       overline: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 1.5,color: SahimColors.orange),
+          fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 1.5,color: SahimColors.grey1),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: SahimColors.grey,
@@ -40,7 +40,7 @@ class SahimTheme {
       shadowColor: SahimColors.grey,
       centerTitle: true,
     ),
-    buttonTheme: ButtonThemeData(buttonColor: SahimColors.green),
+    buttonTheme: const ButtonThemeData(buttonColor: SahimColors.green),
     bottomNavigationBarTheme:const  BottomNavigationBarThemeData(
       selectedIconTheme: IconThemeData(size: 30),
       backgroundColor: Colors.white,

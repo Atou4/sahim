@@ -1,8 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/programs/program_widget.dart';
-
-
 
 class ProgramPage extends StatelessWidget {
   const ProgramPage({Key? key}) : super(key: key);
@@ -78,8 +75,6 @@ class ProgramPage extends StatelessWidget {
                     ),
                   ],
                 )
-          
-          
                 ],
               ),
             ),

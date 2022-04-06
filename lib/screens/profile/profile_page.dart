@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/widgets/settings_button.dart';
@@ -12,53 +13,73 @@ class ProfilePage extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         body: CustomScrollView(
-          physics: const BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics()),
           slivers: [
             SliverAppBar(
-              expandedHeight: 140.0,
-              floating: true,
+              elevation: 0,
+              pinned: false,
+              expandedHeight: 200,
+              collapsedHeight: kToolbarHeight,
+              floating: false,
+              automaticallyImplyLeading: false,
               backgroundColor: SahimColors.green,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Padding(
-                  padding: const EdgeInsets.only(bottom: 20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'عمار الهندي',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5!
-                            .copyWith(color: SahimColors.white),
-                      ),
-                      Text(
-                        '9 تبرعات تم طلبها مسبقا',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1!
-                            .copyWith(color: SahimColors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                background: Stack(children: [
-                  Positioned(
-                    child: Container(
-                      height: 20,
-                      decoration: const BoxDecoration(
-                        color: SahimColors.grey,
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(25.0),
-                        ),
+              flexibleSpace:  FlexibleSpaceBar(
+                background: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned(
+                      bottom: 60,
+                      right: 40,
+                      child: Row(
+                        children: [
+                          ClipOval(
+                            child: Container(
+                              width: 72.0,
+                              height: 72.0,
+                              color: Colors.white60,
+                              child:
+                              const Center(child: Icon(CupertinoIcons.person)),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 23.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children:const  [
+                                Text(
+                                  'محمد أحمد', //_auth.user!.displayName ??
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  'تم التبرع 21500دج ', //_auth.user!.displayName ??
+                                  style: TextStyle(
+                                      fontSize: 21,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    bottom: -7,
-                    left: 0,
-                    right: 0,
-                  )
-                ]),
+                    Positioned(
+                      bottom: -1.0,
+                      child: Container(
+                        height: 20,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15),
+                            ),
+                            color: Theme.of(context).scaffoldBackgroundColor),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SliverList(
@@ -66,7 +87,7 @@ class ProfilePage extends StatelessWidget {
                 <Widget>[
                   Stack(
                     children: [
-                      
+
                       Padding(
                         padding: const EdgeInsets.only(right:20.0),
                         child: Column(
