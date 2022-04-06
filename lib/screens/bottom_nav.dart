@@ -27,7 +27,9 @@ class _BottomNav extends State<BottomNav> {
    // Pagemap(ide:widget.ide ,clientnumber: widget.clientnumber,),
     const ProgramPage(),
     const OrgsPage(),
-    const ProfilePage(),
+    const HomePage(),
+
+
     
   ];
     return Scaffold(

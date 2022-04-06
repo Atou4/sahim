@@ -13,11 +13,11 @@ class MainButton extends StatefulWidget {
    MainButton(
       {Key? key,
       required this.text,
+      required this.width,
       required this.textcolor,
       this.buttoncolor,
       required this.onpressed,
       required this.bordercolor,
-      this.width,
       this.height,
       this.borderRadius})
       : super(key: key);
@@ -36,8 +36,8 @@ class _MainButtonState extends State<MainButton> {
       child: AnimatedContainer(
         alignment: Alignment.center,
         duration: const Duration(milliseconds: 300),
-        height: widget.height ?? 50,
-        width: widget.width ?? 350,
+        height: 50,
+        width: widget.width,
         decoration: BoxDecoration(
           color: widget.buttoncolor,
           shape: BoxShape.rectangle,
