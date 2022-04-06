@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:sahim/screens/home/stats_widget.dart';
-
-=======
 import '../../widgets/project_card_widget.dart';
->>>>>>> bfab2fc13f0357aef1dfc432a1cd96f9d731db43
 
 
 class HomePage extends StatelessWidget {
@@ -112,11 +108,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-<<<<<<< HEAD
                   const StatsCard(),
           
-=======
->>>>>>> bfab2fc13f0357aef1dfc432a1cd96f9d731db43
                 ],
               ),
             ),
