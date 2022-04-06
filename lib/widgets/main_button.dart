@@ -36,7 +36,7 @@ class _MainButtonState extends State<MainButton> {
       child: AnimatedContainer(
         alignment: Alignment.center,
         duration: const Duration(milliseconds: 300),
-        height: 50,
+        height: widget.height ?? 50,
         width: widget.width,
         decoration: BoxDecoration(
           color: widget.buttoncolor,

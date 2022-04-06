@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sahim/screens/orgs/orgs_page.dart';
 import 'package:sahim/screens/profile/profile_page.dart';
 import 'package:sahim/screens/programs/programs_page.dart';
+import 'package:sahim/theme/sahim_icons.dart';
 
 import 'home/home_page.dart';
 
@@ -43,19 +44,19 @@ class _BottomNav extends State<BottomNav> {
         },
         items: const[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(SahimIcons.shelter__charity__volunteer__social),
             label: "الرئيسية",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.nat),
+            icon: Icon(SahimIcons.people__love__family__happy),
             label: "الجمعيات",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.category),
+            icon: Icon(SahimIcons.charity__care__volunteer__support),
             label: "المجالات",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(SahimIcons.volunteer__charity__community__compassion),
             label: "حسابي",
           ),
         ],
