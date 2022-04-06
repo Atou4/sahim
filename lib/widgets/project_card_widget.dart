@@ -12,13 +12,14 @@ class ProjectCardWidget extends StatelessWidget {
       required this.projectName,
       required this.imgUrl,
       required this.restToDonatePercentage,
-      required this.orgName})
+      required this.orgName,this.status})
       : super(key: key);
 
   final String projectName;
   final String imgUrl;
   final double restToDonatePercentage;
   final String orgName;
+  final String? status;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +90,10 @@ class ProjectCardWidget extends StatelessWidget {
                      Text(orgName,style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.grey),),
                    ],
                  ),
-                 MainButton(
+                 status != null ?
+
+                 Text(status!)
+                 : MainButton(
                    text: "تبرع الأن",
                    onpressed: () {},
                    textcolor: SahimColors.white,

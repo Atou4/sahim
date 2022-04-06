@@ -1,89 +1,47 @@
-
 import 'package:flutter/material.dart';
-import 'package:sahim/screens/my_donation/my_donation_card.dart';
-import 'package:sahim/theme/colors.dart';
+import 'package:sahim/screens/my_donation/tracking_donation_page.dart';
+import 'package:sahim/widgets/project_card_widget.dart';
 
+import '../../theme/colors.dart';
 
-
-class DonationPage extends StatelessWidget {
-  const DonationPage({Key? key}) : super(key: key);
+class MyDonationScreen extends StatelessWidget {
+  const MyDonationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        body: SafeArea(
-          child: Stack(
-            children: [
-              Positioned(
-              bottom: -30,
-              left: 0,
-              child: Image.asset(
-                "assets/pics/leaf_outlined.png",
-                width: size.width * 0.25,
-              ),
-            ),
-            Positioned(
-              bottom: -30,
-              right: -30,
-              child: Image.asset( 
-                "assets/pics/leaf_solid.png",
-                width: size.width * 0.35,
-              ),
-            ),
-              ListView(
-            children: <Widget>[ Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: size.height * 0.03,
-                  ),
-                
-                  SizedBox(
-                    height: size.height * 0.01,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:  [
-                      Text("تبرعاتي",
-                          style: Theme.of(context).textTheme.headline4),
-                     const Spacer(),
-                       GestureDetector(
-                         onTap:(){Navigator.pop(context);},
-                         child: const Icon(Icons.arrow_forward_ios,color: SahimColors.orange,)),
-                    ],
-                  ),
-                  
-                  SizedBox(
-                    height: size.height * 0.03,
-                  ),
-                  Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 400,
-                      child: ListView(
-                        scrollDirection: Axis.vertical,
-                        children: const [
-                          DonationCard(paid: true,),
-                          DonationCard(paid: false,),                        ],
-                      ),
-                    ),
-                  ],
-                )
-          
-          
-                ],
-              ),
-            ),
-            ]
+        appBar: AppBar(
+          foregroundColor: SahimColors.green,
+          automaticallyImplyLeading: true,
+          title: Text("تبرعاتي",style: Theme.of(context).textTheme.headline4,),
+          centerTitle: true,
+        ),
+        body: Container(
+          margin: const EdgeInsets.all(10),
+          child: ListView(
+            children: const [
+              SizedBox(
+                  height: 330,
+                  child: ProjectCardWidget(
+                      projectName: 'إفطار الصائم',
+                      imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg',
+                      restToDonatePercentage: 30,
+                      orgName: 'الأمل',
+                      status: "تم الدفع بنجاح",
+                  )),
+              SizedBox(
+                  height: 330,
+                  child: ProjectCardWidget(
+                    imgUrl: 'assets/img/down-syndrome-painting.jpg',
+                    projectName: 'عناية أطفال متلازمة داون',
+                    orgName: "إنسان",
+                    restToDonatePercentage: 14,
+                    status: "تم الإيداع للجمعية",
+                  ),),
+            ],
           ),
-            ],)
         ),
       ),
     );
