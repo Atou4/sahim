@@ -248,16 +248,16 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        bottom: -20,
-                        left: -20,
+                        bottom: -30,
+                        left: 0,
                         child: Image.asset(
                           "assets/pics/leaf_outlined.png",
-                          width: size.width * 0.35,
+                          width: size.width * 0.25,
                         ),
                       ),
                       Positioned(
                         bottom: -30,
-                        right: -10,
+                        right: -30,
                         child: Image.asset(
                           "assets/pics/leaf_solid.png",
                           width: size.width * 0.35,

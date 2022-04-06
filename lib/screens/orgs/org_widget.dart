@@ -13,8 +13,7 @@ class OrgCard extends StatelessWidget {
     return DropShadow(
       blurRadius: 1,
       child: Container(
-        height: 94,
-        margin: const EdgeInsets.only(left:0.0),
+        height: 100,
         width:400,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0),
@@ -30,16 +29,13 @@ class OrgCard extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 10.0),
-                  child: Hero(
-                    tag: "ProfilePicture",
-                    child: ClipOval(
-                        child: Image.asset(
-                      "assets/pics/aso.png",
-                      height: 50,
-                      width: 50,
-                      fit: BoxFit.cover,
-                    )),
-                  ),
+                  child: ClipOval(
+                      child: Image.asset(
+                    "assets/pics/aso.png",
+                    height: 50,
+                    width: 50,
+                    fit: BoxFit.cover,
+                  )),
                 ),
                 Expanded(
                   child: Container(
@@ -50,7 +46,7 @@ class OrgCard extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           "جمعية دير الخير و أنساه",
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.headline3,
                           overflow: TextOverflow.ellipsis,
                         ),
                         Text(

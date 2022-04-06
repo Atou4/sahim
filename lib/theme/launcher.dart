@@ -22,7 +22,7 @@ class Launcher extends StatelessWidget {
       themeMode:ThemeMode.system ,
       home: const Directionality(
         textDirection: TextDirection.rtl,
-        child:  TrackingDonationPage()),
+        child:  BottomNav()),
     );
   }
 }

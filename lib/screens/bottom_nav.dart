@@ -27,7 +27,7 @@ class _BottomNav extends State<BottomNav> {
    // Pagemap(ide:widget.ide ,clientnumber: widget.clientnumber,),
     const ProgramPage(),
     const OrgsPage(),
-    const HomePage(),
+    const ProfilePage(),
 
 
     

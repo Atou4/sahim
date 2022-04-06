@@ -16,7 +16,7 @@ class SahimTheme {
     textTheme:  const TextTheme(
       headline4: TextStyle(fontSize: 26, fontWeight: FontWeight.w600,color: SahimColors.green),
       headline5: TextStyle(fontSize: 26, fontWeight: FontWeight.w400,color: SahimColors.green),
-      headline3: TextStyle(fontSize: 22, fontWeight: FontWeight.w600,color: SahimColors.green),
+      headline3: TextStyle(fontSize: 22, fontWeight: FontWeight.w400,color: SahimColors.green),
       headline6: TextStyle(
           fontSize: 22, fontWeight: FontWeight.w500, letterSpacing: 0.15,color: SahimColors.grey1),
       subtitle1: TextStyle(

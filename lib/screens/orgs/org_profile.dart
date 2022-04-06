@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/my_donation/my_donation_card.dart';
+import 'package:sahim/screens/orgs/org_widget.dart';
+import 'package:sahim/screens/programs/program_widget.dart';
 import 'package:sahim/theme/colors.dart';
 
 
@@ -53,9 +55,10 @@ class DonationPage extends StatelessWidget {
                       Text("تبرعاتي",
                           style: Theme.of(context).textTheme.headline4),
                      const Spacer(),
-                       GestureDetector(
-                         onTap:(){Navigator.pop(context);},
-                         child: const Icon(Icons.arrow_forward_ios,color: SahimColors.orange,)),
+                       const Padding(
+                        padding: EdgeInsets.only(bottom: 10.0),
+                        child: Icon(Icons.arrow_forward_ios,color: SahimColors.orange,)
+                      ),
                     ],
                   ),
                   
@@ -71,7 +74,7 @@ class DonationPage extends StatelessWidget {
                         scrollDirection: Axis.vertical,
                         children: const [
                           DonationCard(paid: true,),
-                          DonationCard(paid: false,),                        ],
+                        ],
                       ),
                     ),
                   ],
