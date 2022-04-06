@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/my_donation/my_donation_screen.dart';
 import 'package:sahim/screens/orgs/org_widget.dart';
+import 'package:sahim/theme/colors.dart';
+import 'package:sahim/theme/sahim_icons.dart';
 
 class OrgsPage extends StatelessWidget {
   const OrgsPage({Key? key}) : super(key: key);
@@ -58,11 +60,7 @@ class OrgsPage extends StatelessWidget {
                                   MaterialPageRoute(
                                       builder: (_) => const DonationPage()));
                             },
-                            child: const Image(
-                              height: 30,
-                              width: 50,
-                              image: AssetImage('assets/pics/cart.png'),
-                            ),
+                            child: const Icon(SahimIcons.happiness__smile__kindness__love_1,color: SahimColors.orange,size: 40,)
                           ),
                         ),
                       ],

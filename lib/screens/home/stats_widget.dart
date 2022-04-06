@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:drop_shadow/drop_shadow.dart';
 import 'package:sahim/theme/colors.dart';
-import 'package:sahim/theme/sahim_icons.dart';
-import 'package:sahim/widgets/card_button.dart';
+
 
 class StatsCard extends StatelessWidget {
   const StatsCard({

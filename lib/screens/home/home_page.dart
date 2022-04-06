@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/home/categories_widget.dart';
 import 'package:sahim/screens/my_donation/tracking_donation_page.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/theme/sahim_icons.dart';
@@ -18,15 +19,18 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: FittedBox(child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(20.0),
             child: Image.asset("assets/img/logo_tmp.png"),
           )),
           actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrackingDonationPage()));
-              },
-              icon: const Icon(SahimIcons.happiness__smile__kindness__love_1,color: SahimColors.orange,size: 40,),
+            Padding(
+              padding: const EdgeInsets.only(left:20.0),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrackingDonationPage()));
+                },
+                icon: const Icon(SahimIcons.happiness__smile__kindness__love_1,color: SahimColors.orange,size: 40,),
+              ),
             )
           ],
         ),
@@ -53,7 +57,7 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 6.0),
                       child: Text(
                         "عرض المزيد",
-                        style: Theme.of(context).textTheme.overline,
+                        style: Theme.of(context).textTheme.overline!.copyWith(color: SahimColors.orange),
                       ),
                     ),
                   ],
@@ -87,12 +91,24 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 6.0),
                       child: Text(
                         "عرض المزيد",
-                        style: Theme.of(context).textTheme.overline,
+                         style: Theme.of(context).textTheme.overline!.copyWith(color: SahimColors.orange),
                       ),
                     ),
                   ],
                 ),
               ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                height: 260,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    CatCard( title: "عدد المستفيدين", count: 640,),
+                    CatCard( title: "عدد المستفيدين", count: 640,)
+                  ],
+                ),
+              ),
+              
               SizedBox(
                 height: size.height * 0.03,
               ),
@@ -109,7 +125,7 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 6.0),
                       child: Text(
                         "عرض المزيد",
-                        style: Theme.of(context).textTheme.overline,
+                        style: Theme.of(context).textTheme.overline!.copyWith(color: SahimColors.orange),
                       ),
                     ),
                   ],
