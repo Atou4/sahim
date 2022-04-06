@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:sahim/models/project_model.dart';
 import 'package:sahim/theme/colors.dart';
 
 import 'main_button.dart';
 
 class ProjectCardWidget extends StatelessWidget {
 
-
-   ProjectCardWidget(
+   const ProjectCardWidget(
       {Key? key,
-      required this.projectName,
-      required this.imgUrl,
-      required this.restToDonatePercentage,
-      required this.orgName,this.status,
-        required this.onTap, this.onDonateNow})
+      required this.project,
+      this.status,
+      required this.onTap, this.onDonateNow})
       : super(key: key);
 
-  final String projectName;
-  final String imgUrl;
-  final double restToDonatePercentage;
-  final String orgName;
+  //final String projectName;
+  //final String imgUrl;
+  //final double restToDonatePercentage;
+  //final String orgName;
   final String? status;
   final VoidCallback onTap;
   final VoidCallback? onDonateNow;
+
+  final Project project;
+
   @override
   Widget build(BuildContext context) {
     double containerWidth = MediaQuery.of(context).size.width*0.85;
@@ -52,7 +53,7 @@ class ProjectCardWidget extends StatelessWidget {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.asset(
-                          imgUrl,
+                          project.imgUrl,
                           fit: BoxFit.cover,
                         )),
                   ),
@@ -85,8 +86,8 @@ class ProjectCardWidget extends StatelessWidget {
                  Column(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
-                     Text(projectName,style:const  TextStyle(fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.1,color: Colors.black),),
-                     Text(orgName,style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.grey),),
+                     Text(project.name,style:const  TextStyle(fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.1,color: Colors.black),),
+                     Text(project.association.name,style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.grey),),
                    ],
                  ),
                  status != null ?
@@ -111,7 +112,7 @@ class ProjectCardWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "${restToDonatePercentage.toInt()}%",
+                  "${project.rest.toInt()}%",
                   style:
                   const TextStyle(color: SahimColors.green, fontSize: 13),
                 ),
@@ -119,7 +120,7 @@ class ProjectCardWidget extends StatelessWidget {
                   child: LinearPercentIndicator(
                     barRadius: const Radius.circular(10),
                     width: containerWidth - 48,
-                    percent: restToDonatePercentage/100,
+                    percent: project.rest/100,
                     lineHeight: 10,
                     progressColor: SahimColors.green,
                   ),

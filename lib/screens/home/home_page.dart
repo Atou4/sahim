@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sahim/models/project_model.dart';
 import 'package:sahim/theme/sahim_icons.dart';
 import 'package:sahim/screens/home/stats_widget.dart';
+import '../../backend/data.dart';
 import '../../widgets/project_card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -51,45 +53,30 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
+
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10),
                 height: 350,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children:  [
-                    ProjectCardWidget(
-                      imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg',
-                      projectName: 'إفطار الصائم',
-                      orgName: "جمعية الأمل",
-                      restToDonatePercentage: 70,
-                      onTap: (){
-                        print("oooooooooooooooooooooooooooooo__________________________________________");
-                      }, onDonateNow: () {  },
-                    ),
-                    ProjectCardWidget(
-                      imgUrl: 'assets/img/old_man.jpeg',
-                      projectName: 'إعانة كبار السن',
-                      orgName: "جمعية دار الرحمة",
-                      restToDonatePercentage: 51,
-                      onTap: (){}, onDonateNow: () {  },
-                    ),
-                    ProjectCardWidget(
-                      imgUrl: 'assets/img/homeless-people.jpg',
-                      projectName: 'مشروع إواء المحتاجين',
-                      orgName: "جمعية الأمل",
-                      restToDonatePercentage: 34,
-                      onTap: (){}, onDonateNow: () {  },
-                    ),
-                    ProjectCardWidget(
-                      imgUrl: 'assets/img/down-syndrome-painting.jpg',
-                      projectName: 'عناية أطفال متلازمة داون',
-                      orgName: "إنسان",
-                      restToDonatePercentage: 14,
-                      onTap: (){}, onDonateNow: () {  },
-                    ),
-                  ],
+                child: FutureBuilder(
+                  future: Data.getTopProjects(),
+                  builder: (context,snap){
+                    List<Project> projects = (snap.data as List<Project>);
+                    return ListView.builder(
+                      itemCount: projects.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context,index){
+                        return ProjectCardWidget(
+                          project: projects.elementAt(index),
+                          onTap: (){
+                          },
+                          onDonateNow: () {},
+                        );
+                      },
+                    );
+                  }
                 ),
               ),
+
 
               const Center(
                   child: Image(

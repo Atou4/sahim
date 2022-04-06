@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/my_donation/tracking_donation_page.dart';
 import 'package:sahim/widgets/project_card_widget.dart';
+import '../../backend/data.dart';
+import '../../models/project_model.dart';
 import '../../theme/colors.dart';
 
 
@@ -37,43 +39,63 @@ class MyDonationScreen extends StatelessWidget {
           margin: const EdgeInsets.all(10),
           child: ListView(
             children:  [
-              SizedBox(
-                  height: 330,
-                  child: ProjectCardWidget(
-                      projectName: 'إفطار الصائم',
-                      imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg',
-                      restToDonatePercentage: 30,
-                      orgName: 'الأمل',
-                      status: "تم الدفع بنجاح",
-                    onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrackingDonationPage(currentTrack: 0,)));
-                    },
-                  )),
-              SizedBox(
-                  height: 330,
-                  child: ProjectCardWidget(
-                    imgUrl: 'assets/img/down-syndrome-painting.jpg',
-                    projectName: 'عناية أطفال متلازمة داون',
-                    orgName: "إنسان",
-                    restToDonatePercentage: 14,
-                    status: "تم الإيداع للجمعية",
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrackingDonationPage(currentTrack: 1,)));
-                    },
-                  ),),
-
-              SizedBox(
-                height: 330,
-                child: ProjectCardWidget(
-                  imgUrl: 'assets/img/homeless-people.jpg',
-                  projectName: 'مشروع إواء المحتاجين',
-                  orgName: "جمعية الأمل",
-                  restToDonatePercentage: 14,
-                  status: "تم إجاز المشروع",
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 2,)));
-                  },
-                ),),
+              FutureBuilder(
+                  future: Data.getMyDonationProjects(),
+                  builder: (context,snap){
+                    List<Project> projects = (snap.data as List<Project>);
+                    return ListView.builder(
+                      itemCount: projects.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context,index){
+                        return ProjectCardWidget(
+                          project: projects.elementAt(index),
+                          status:"تم الدفع بنجاح" ,
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 0,)));
+                          },
+                          onDonateNow: () {},
+                        );
+                      },
+                    );
+                  }
+              ),
+              // SizedBox(
+              //     height: 330,
+              //     child: ProjectCardWidget(
+              //         projectName: 'إفطار الصائم',
+              //         imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg',
+              //         restToDonatePercentage: 30,
+              //         orgName: 'الأمل',
+              //         status: "تم الدفع بنجاح",
+              //       onTap: (){
+              //           Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 0,)));
+              //       },
+              //     )),
+              // SizedBox(
+              //     height: 330,
+              //     child: ProjectCardWidget(
+              //       imgUrl: 'assets/img/down-syndrome-painting.jpg',
+              //       projectName: 'عناية أطفال متلازمة داون',
+              //       orgName: "إنسان",
+              //       restToDonatePercentage: 14,
+              //       status: "تم الإيداع للجمعية",
+              //       onTap: (){
+              //         Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 1,)));
+              //       },
+              //     ),),
+              //
+              // SizedBox(
+              //   height: 330,
+              //   child: ProjectCardWidget(
+              //     imgUrl: 'assets/img/homeless-people.jpg',
+              //     projectName: 'مشروع إواء المحتاجين',
+              //     orgName: "جمعية الأمل",
+              //     restToDonatePercentage: 14,
+              //     status: "تم إجاز المشروع",
+              //     onTap: (){
+              //       Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 2,)));
+              //     },
+              //   ),),
             ],
           ),
         ),
