@@ -39,7 +39,19 @@ class _TrackingDonationPageState extends State<TrackingDonationPage> {
         appBar: AppBar(
           automaticallyImplyLeading: true,
           centerTitle: true,
-          foregroundColor: SahimColors.grey1,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_forward_ios,
+                    color: SahimColors.orange,
+                  )),
+            ),
+          ],
           title: Text(
             "إجراء عمليات لمرضى السرطان",
             style: Theme.of(context).textTheme.headline4,

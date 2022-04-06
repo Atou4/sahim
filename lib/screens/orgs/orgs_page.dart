@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/my_donation/my_donation_screen.dart';
+import 'package:sahim/screens/orgs/org_profile.dart';
 import 'package:sahim/screens/orgs/org_widget.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/theme/sahim_icons.dart';

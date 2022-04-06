@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/my_donation/checkout_screen.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/widgets/card_button.dart';
 
@@ -15,7 +16,7 @@ class CatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       height: 220,
       width: 200,
       decoration: BoxDecoration(
@@ -100,7 +101,10 @@ class CatCard extends StatelessWidget {
           SizedBox(
             width: 120.0,
             child: ProButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) =>  CheckoutPage()));
+              },
               text: "تبرع الان",
               color: SahimColors.green,
             ),
