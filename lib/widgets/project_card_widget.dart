@@ -2,25 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:sahim/models/project_model.dart';
 import 'package:sahim/theme/colors.dart';
-
+import 'package:sahim/utils/tracking_utils.dart';
 import 'main_button.dart';
 
 class ProjectCardWidget extends StatelessWidget {
 
+
+
    const ProjectCardWidget(
       {Key? key,
       required this.project,
-      this.status,
-      required this.onTap, this.onDonateNow})
+      required this.onTap, this.onDonateNow,
+      this.isDonated = false})
       : super(key: key);
 
-  //final String projectName;
-  //final String imgUrl;
-  //final double restToDonatePercentage;
-  //final String orgName;
-  final String? status;
   final VoidCallback onTap;
   final VoidCallback? onDonateNow;
+  final bool isDonated;
+
 
   final Project project;
 
@@ -29,7 +28,7 @@ class ProjectCardWidget extends StatelessWidget {
     double containerWidth = MediaQuery.of(context).size.width*0.85;
     double containerHeight = MediaQuery.of(context).size.height * 0.27;
     return InkWell(
-      onTap: ()=>onTap(),
+      onTap: ()=> onTap(),
       child: Container(
 
         padding: const EdgeInsets.all(8.0),
@@ -90,14 +89,14 @@ class ProjectCardWidget extends StatelessWidget {
                      Text(project.association.name,style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.grey),),
                    ],
                  ),
-                 status != null ?
+                 isDonated ?
 
-                 Text(status!)
+                 Text(currentTrackingStepToString((project as DonatedProject).currentTrackingStatus))
                  : MainButton(
                    text: "تبرع الأن",
-                   onpressed: () {
+                   onpressed: (){
                      //use this function only if donation is done
-                     if(status != null) onDonateNow!();
+                     if(isDonated) onDonateNow!();
                    },
                    textcolor: SahimColors.white,
                    buttoncolor: SahimColors.green,

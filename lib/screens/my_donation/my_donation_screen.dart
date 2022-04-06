@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sahim/screens/my_donation/tracking_donation_page.dart';
+import 'package:sahim/utils/tracking_utils.dart';
 import 'package:sahim/widgets/project_card_widget.dart';
 import '../../backend/data.dart';
 import '../../models/project_model.dart';
 import '../../theme/colors.dart';
-
 
 class MyDonationScreen extends StatelessWidget {
   const MyDonationScreen({Key? key}) : super(key: key);
@@ -39,27 +39,36 @@ class MyDonationScreen extends StatelessWidget {
           margin: const EdgeInsets.all(10),
           child: FutureBuilder(
               future: Data.getMyDonationProjects(),
-              builder: (context,snap){
-                List<Project> projects = (snap.data as List<Project>);
+              builder: (context, snap) {
+                List<DonatedProject> projects =
+                    (snap.data as List<DonatedProject>);
                 return ListView.builder(
                   itemCount: projects.length,
                   scrollDirection: Axis.vertical,
-                  itemBuilder: (context,index){
+                  itemBuilder: (context, index) {
                     return Container(
                       height: 330,
                       child: ProjectCardWidget(
                         project: projects.elementAt(index),
-                        status:"تم الدفع بنجاح" ,
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 0,)));
+                        isDonated: true,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TrackingDonationPage(
+                                        currentTrack:
+                                            currentTrackingStepFromStringToIndex(
+                                                projects
+                                                    .elementAt(index)
+                                                    .currentTrackingStatus),
+                                      )));
                         },
                         onDonateNow: () {},
                       ),
                     );
                   },
                 );
-              }
-          ),
+              }),
         ),
       ),
     );
