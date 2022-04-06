@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/my_donation/tracking_donation_page.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/widgets/card_button.dart';
 
@@ -138,8 +139,11 @@ class CheckoutPage extends StatelessWidget {
                 height: 75,
                 child:
                 ProButton(
-                onPressed: () {},
-                text: "عرض التفاصيل",
+                onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) =>const  TrackingDonationPage(currentTrack: 2,)));
+                },
+                text: "اكمل",
                 color: SahimColors.green,
               ),
               ),
