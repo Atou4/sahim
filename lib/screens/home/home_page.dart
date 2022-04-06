@@ -1,7 +1,10 @@
-
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:sahim/screens/home/stats_widget.dart';
 
+=======
+import '../../widgets/project_card_widget.dart';
+>>>>>>> bfab2fc13f0357aef1dfc432a1cd96f9d731db43
 
 
 class HomePage extends StatelessWidget {
@@ -15,21 +18,21 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: SafeArea(
           child: Stack(
-            children: [
+            children:[
               Positioned(
                   bottom: -40,
                   left: -20,
                   child: Image.asset(
-                    "assets/pics/wing2.png",
+                    "assets/pics/leaf_outlined.png",
                     width: size.width * 0.35,
                   ),
                 ),
               Positioned(
                   bottom: -50,
-                  right: 0,
+                  right: -39,
                   child: Image.asset(
-                    "assets/pics/wing1.png",
-                    width: size.width * 0.35,
+                    "assets/pics/leaf_solid.png",
+                    width: size.width * 0.5,
                   ),
                 ),
               ListView(
@@ -42,10 +45,7 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: size.height * 0.03,
                   ),
-                
-                  SizedBox(
-                    height: size.height * 0.01,
-                  ),
+
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -61,9 +61,22 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    height: 350,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        ProjectCardWidget(imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg', projectName: 'إفطار الصائم', orgName: "جمعية الأمل",restToDonatePercentage: 70,),
+                        ProjectCardWidget(imgUrl: 'assets/img/old_man.jpeg',projectName:  'إعانة كبار السن',orgName: "جمعية دار الرحمة", restToDonatePercentage:51,),
+                        ProjectCardWidget(imgUrl: 'assets/img/homeless-people.jpg', projectName: 'مشروع إواء المحتاجين',orgName: "جمعية الأمل", restToDonatePercentage: 34,),
+                        ProjectCardWidget(imgUrl: 'assets/img/down-syndrome-painting.jpg', projectName: 'عناية أطفال متلازمة داون',orgName: "إنسان", restToDonatePercentage: 14,),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                   height: size.height * 0.03,),
-                 const Center(child:  Image(height: 100,width:300, image: AssetImage('assets/pics/aya.png'),)),
+                 const Center(child:  Image(height: 100,width:300, image: AssetImage('assets/pics/ahsino_ayah.png'),)),
                   
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,8 +112,11 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+<<<<<<< HEAD
                   const StatsCard(),
           
+=======
+>>>>>>> bfab2fc13f0357aef1dfc432a1cd96f9d731db43
                 ],
               ),
             ),

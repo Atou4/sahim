@@ -4,6 +4,9 @@ class MainButton extends StatefulWidget {
    String text;
    Color textcolor;
    Color? buttoncolor;
+   double? width;
+   double? height;
+   double? borderRadius;
   void Function()? onpressed;
   Color bordercolor;
   double width;
@@ -15,7 +18,10 @@ class MainButton extends StatefulWidget {
       required this.textcolor,
       this.buttoncolor,
       required this.onpressed,
-      required this.bordercolor})
+      required this.bordercolor,
+      this.width,
+      this.height,
+      this.borderRadius})
       : super(key: key);
 
   @override
@@ -32,12 +38,17 @@ class _MainButtonState extends State<MainButton> {
       child: AnimatedContainer(
         alignment: Alignment.center,
         duration: const Duration(milliseconds: 300),
+<<<<<<< HEAD
         height: 50,
         width: widget.width,
+=======
+        height: widget.height ?? 50,
+        width: widget.width ?? 350,
+>>>>>>> bfab2fc13f0357aef1dfc432a1cd96f9d731db43
         decoration: BoxDecoration(
           color: widget.buttoncolor,
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(5.0),
+          borderRadius: BorderRadius.circular(widget.borderRadius ?? 5.0),
           border: Border.all(color: widget.bordercolor, width: 1),
         ),
         child: Text(
