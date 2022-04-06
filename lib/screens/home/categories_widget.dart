@@ -17,7 +17,7 @@ class CatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(20),
-      height: 220,
+      height: 240,
       width: 200,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),

@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.only(left:20.0),
               child: IconButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> TrackingDonationPage(currentTrack: 3,)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> TrackingDonationPage(currentTrack: 1,)));
                 },
                 icon: const Icon(SahimIcons.happiness__smile__kindness__love_1,color: SahimColors.orange,size: 40,),
               ),
@@ -78,12 +78,14 @@ class HomePage extends StatelessWidget {
                           return ProjectCardWidget(
                             project: projects.elementAt(index),
                             onTap: () {
+                             
+                            },
+                            onDonateNow: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (_) => CheckoutPage()));
                             },
-                            onDonateNow: () {},
                           );
                         },
                       );
