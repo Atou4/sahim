@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/home/stats_widget.dart';
 
 
 
@@ -98,7 +99,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-          
+                  const StatsCard(),
           
                 ],
               ),

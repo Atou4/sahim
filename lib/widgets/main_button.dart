@@ -6,10 +6,12 @@ class MainButton extends StatefulWidget {
    Color? buttoncolor;
   void Function()? onpressed;
   Color bordercolor;
+  double width;
 
    MainButton(
       {Key? key,
       required this.text,
+      required this.width,
       required this.textcolor,
       this.buttoncolor,
       required this.onpressed,
@@ -31,7 +33,7 @@ class _MainButtonState extends State<MainButton> {
         alignment: Alignment.center,
         duration: const Duration(milliseconds: 300),
         height: 50,
-        width: 350,
+        width: widget.width,
         decoration: BoxDecoration(
           color: widget.buttoncolor,
           shape: BoxShape.rectangle,

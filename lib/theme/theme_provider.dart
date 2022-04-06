@@ -16,6 +16,7 @@ class SahimTheme {
     textTheme:  const TextTheme(
       headline4: TextStyle(fontSize: 26, fontWeight: FontWeight.w600,color: SahimColors.green),
       headline5: TextStyle(fontSize: 26, fontWeight: FontWeight.w400,color: SahimColors.green),
+      headline3: TextStyle(fontSize: 22, fontWeight: FontWeight.w600,color: SahimColors.green),
       headline6: TextStyle(
           fontSize: 22, fontWeight: FontWeight.w500, letterSpacing: 0.15,color: SahimColors.grey1),
       subtitle1: TextStyle(
@@ -23,13 +24,13 @@ class SahimTheme {
       subtitle2: TextStyle(
           fontSize: 13, fontWeight: FontWeight.w500, letterSpacing: 0.1,color: SahimColors.green),
       bodyText1: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.5,color: SahimColors.green),
+          fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.5,color: SahimColors.green),
       bodyText2: TextStyle(
           fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 0.25,color: SahimColors.grey1),
       button: TextStyle(
           fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 1.25,color: SahimColors.green),
       caption: TextStyle(
-          fontSize: 11, fontWeight: FontWeight.w400, letterSpacing: 0.4,color: SahimColors.green),
+          fontSize: 18, fontWeight: FontWeight.w500, letterSpacing: 0.4,color: SahimColors.blue),
       overline: TextStyle(
           fontSize: 16, fontWeight: FontWeight.w500, letterSpacing: 1.5,color: SahimColors.orange),
     ),

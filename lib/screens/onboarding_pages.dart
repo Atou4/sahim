@@ -95,6 +95,7 @@ class _OnboardState extends State<Onboard> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               MainButton(
+                                width:350,
                               text: "التالي",
                               textcolor: SahimColors.white,
                               buttoncolor: SahimColors.green,
@@ -120,6 +121,7 @@ class _OnboardState extends State<Onboard> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               MainButton(
+                              width:350,  
                               text: "التالي",
                               textcolor: SahimColors.white,
                               buttoncolor: SahimColors.green,
