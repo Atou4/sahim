@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sahim/screens/my_donation/tracking_donation_page.dart';
 import 'package:sahim/widgets/project_card_widget.dart';
-
 import '../../theme/colors.dart';
+
 
 class MyDonationScreen extends StatelessWidget {
   const MyDonationScreen({Key? key}) : super(key: key);
@@ -35,26 +36,44 @@ class MyDonationScreen extends StatelessWidget {
         body: Container(
           margin: const EdgeInsets.all(10),
           child: ListView(
-            children: const [
+            children:  [
               SizedBox(
                   height: 330,
                   child: ProjectCardWidget(
-                    projectName: 'إفطار الصائم',
-                    imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg',
-                    restToDonatePercentage: 30,
-                    orgName: 'الأمل',
-                    status: "تم الدفع بنجاح",
+                      projectName: 'إفطار الصائم',
+                      imgUrl: 'assets/img/people-sharing-some-dried-dates.jpg',
+                      restToDonatePercentage: 30,
+                      orgName: 'الأمل',
+                      status: "تم الدفع بنجاح",
+                    onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrackingDonationPage(currentTrack: 0,)));
+                    },
                   )),
+              SizedBox(
+                  height: 330,
+                  child: ProjectCardWidget(
+                    imgUrl: 'assets/img/down-syndrome-painting.jpg',
+                    projectName: 'عناية أطفال متلازمة داون',
+                    orgName: "إنسان",
+                    restToDonatePercentage: 14,
+                    status: "تم الإيداع للجمعية",
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrackingDonationPage(currentTrack: 1,)));
+                    },
+                  ),),
+
               SizedBox(
                 height: 330,
                 child: ProjectCardWidget(
-                  imgUrl: 'assets/img/down-syndrome-painting.jpg',
-                  projectName: 'عناية أطفال متلازمة داون',
-                  orgName: "إنسان",
+                  imgUrl: 'assets/img/homeless-people.jpg',
+                  projectName: 'مشروع إواء المحتاجين',
+                  orgName: "جمعية الأمل",
                   restToDonatePercentage: 14,
-                  status: "تم الإيداع للجمعية",
-                ),
-              ),
+                  status: "تم إجاز المشروع",
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackingDonationPage(currentTrack: 2,)));
+                  },
+                ),),
             ],
           ),
         ),

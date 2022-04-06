@@ -5,6 +5,8 @@ import 'package:sahim/screens/orgs/org_widget.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/theme/sahim_icons.dart';
 
+import 'org_profile.dart';
+
 class OrgsPage extends StatelessWidget {
   const OrgsPage({Key? key}) : super(key: key);
 

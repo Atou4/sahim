@@ -7,12 +7,13 @@ import 'main_button.dart';
 class ProjectCardWidget extends StatelessWidget {
 
 
-  const ProjectCardWidget(
+   ProjectCardWidget(
       {Key? key,
       required this.projectName,
       required this.imgUrl,
       required this.restToDonatePercentage,
-      required this.orgName,this.status})
+      required this.orgName,this.status,
+        required this.onTap, this.onDonateNow})
       : super(key: key);
 
   final String projectName;
@@ -20,16 +21,14 @@ class ProjectCardWidget extends StatelessWidget {
   final double restToDonatePercentage;
   final String orgName;
   final String? status;
-
+  final VoidCallback onTap;
+  final VoidCallback? onDonateNow;
   @override
   Widget build(BuildContext context) {
     double containerWidth = MediaQuery.of(context).size.width*0.85;
     double containerHeight = MediaQuery.of(context).size.height * 0.27;
     return InkWell(
-
-      onTap: (){
-
-      },
+      onTap: ()=>onTap(),
       child: Container(
 
         padding: const EdgeInsets.all(8.0),
@@ -95,7 +94,10 @@ class ProjectCardWidget extends StatelessWidget {
                  Text(status!)
                  : MainButton(
                    text: "تبرع الأن",
-                   onpressed: () {},
+                   onpressed: () {
+                     //use this function only if donation is done
+                     if(status != null) onDonateNow!();
+                   },
                    textcolor: SahimColors.white,
                    buttoncolor: SahimColors.green,
                    bordercolor:SahimColors.green,
