@@ -66,14 +66,12 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return ProjectCardWidget(
                             project: projects.elementAt(index),
-                            onTap: () {
-
-                            },
+                            onTap: () {},
                             onDonateNow: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (_) => CheckoutPage()));
+                                      builder: (context) => const CheckoutPage()));
                             },
                           );
                         },

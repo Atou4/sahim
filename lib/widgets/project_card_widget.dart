@@ -96,7 +96,7 @@ class ProjectCardWidget extends StatelessWidget {
                    text: "تبرع الأن",
                    onpressed: (){
                      //use this function only if donation is done
-                     if(isDonated) onDonateNow!();
+                     if(!isDonated) onDonateNow!();
                    },
                    textcolor: SahimColors.white,
                    buttoncolor: SahimColors.green,
