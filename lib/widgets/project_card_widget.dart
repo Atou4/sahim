@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:sahim/theme/colors.dart';
@@ -13,13 +12,13 @@ class ProjectCardWidget extends StatelessWidget {
       required this.projectName,
       required this.imgUrl,
       required this.restToDonatePercentage,
-      this.icon})
+      required this.orgName})
       : super(key: key);
 
   final String projectName;
   final String imgUrl;
-  final IconData? icon; //use it in recommended list use icon else don't use it
   final double restToDonatePercentage;
+  final String orgName;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +79,7 @@ class ProjectCardWidget extends StatelessWidget {
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
                    Text(projectName,style:const  TextStyle(fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.1,color: Colors.black),),
-                   Text("جمعية الأمل",style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.grey),),
+                   Text(orgName,style: Theme.of(context).textTheme.subtitle1?.copyWith(color: Colors.grey),),
                  ],
                ),
                MainButton(

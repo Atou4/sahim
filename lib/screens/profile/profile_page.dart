@@ -240,7 +240,7 @@ class ProfilePage extends StatelessWidget {
                               ),
                             ),
                             Image.asset(
-                            "assets/pics/wing2.png",
+                            "assets/pics/leaf_outlined.png",
                             width: size.width * 0.35,
                             color: SahimColors.grey,
                           ),
@@ -251,7 +251,7 @@ class ProfilePage extends StatelessWidget {
                         bottom: -20,
                         left: -20,
                         child: Image.asset(
-                          "assets/pics/wing2.png",
+                          "assets/pics/leaf_outlined.png",
                           width: size.width * 0.35,
                         ),
                       ),
@@ -259,7 +259,7 @@ class ProfilePage extends StatelessWidget {
                         bottom: -30,
                         right: -10,
                         child: Image.asset(
-                          "assets/pics/wing1.png",
+                          "assets/pics/leaf_solid.png",
                           width: size.width * 0.35,
                         ),
                       ),
