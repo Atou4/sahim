@@ -3,21 +3,17 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../theme/colors.dart';
 import '../../widgets/main_button.dart';
 
-class TrackingDonationPage extends StatefulWidget {
-  const TrackingDonationPage({Key? key}) : super(key: key);
 
-  @override
-  State<TrackingDonationPage> createState() => _TrackingDonationPageState();
-}
+class TrackingDonationPage extends StatelessWidget {
+  const TrackingDonationPage({Key? key,required this.currentTrack}):super(key: key);
+  final int currentTrack;
 
-class _TrackingDonationPageState extends State<TrackingDonationPage> {
-  int _currentTrack = 2;
-  Color activeStepColor = SahimColors.green;
 
   Step _buildTrackStep({
     bool isActive = false,
     required String title,
     required Widget content,
+    required BuildContext context,
   }) {
     return Step(
         title: Text(
@@ -25,7 +21,7 @@ class _TrackingDonationPageState extends State<TrackingDonationPage> {
           style: Theme.of(context)
               .textTheme
               .headline6
-              ?.copyWith(color: isActive ? activeStepColor : Colors.grey),
+              ?.copyWith(color: isActive ? SahimColors.green : Colors.grey),
         ),
         isActive: isActive,
         content: content);
@@ -48,7 +44,7 @@ class _TrackingDonationPageState extends State<TrackingDonationPage> {
         body: SafeArea(
           child: Stepper(
             margin: const EdgeInsets.symmetric(horizontal: 15),
-            currentStep: _currentTrack,
+            currentStep: currentTrack,
             steps: [
               _buildTrackStep(
                 isActive: true,
@@ -94,9 +90,10 @@ class _TrackingDonationPageState extends State<TrackingDonationPage> {
                           "عند جمع المبلغ المتفق عليه من عند الجمعية سنقوم بإرسال المال إلى الجمعية"),
                     ],
                   ),
-                ),
+                ), context: context,
               ),
               _buildTrackStep(
+
                 isActive: true,
                 title: "تم الإيداع للجمعية",
                 content: Container(
@@ -104,6 +101,7 @@ class _TrackingDonationPageState extends State<TrackingDonationPage> {
                   child: const Text(
                       "جاري تنفيذ المشروع من قبل الجمعية سنعلمك عند إنتهاء المشروع"),
                 ),
+                  context :context,
               ),
               _buildTrackStep(
                 isActive: true,
@@ -136,6 +134,7 @@ class _TrackingDonationPageState extends State<TrackingDonationPage> {
                     ],
                   ),
                 ),
+                context: context
               ),
             ],
             onStepTapped: (_) {},

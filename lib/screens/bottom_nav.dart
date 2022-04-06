@@ -24,7 +24,6 @@ class _BottomNav extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pages = [
-
       // Pagemap(ide:widget.ide ,clientnumber: widget.clientnumber,),
       const ProfilePage(),
       const ProgramPage(),

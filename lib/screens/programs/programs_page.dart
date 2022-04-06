@@ -4,6 +4,8 @@ import 'package:sahim/screens/programs/program_widget.dart';
 import 'package:sahim/theme/colors.dart';
 import 'package:sahim/theme/sahim_icons.dart';
 
+import '../orgs/org_profile.dart';
+
 class ProgramPage extends StatelessWidget {
   const ProgramPage({Key? key}) : super(key: key);
 
